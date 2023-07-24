@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SACH_API_Automation</groupId>
+  <artifactId>SACH_API_Automation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <build>
+	  <pluginManagement>
+	  <plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+       <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.11.0</version>
+        
+        </plugin>
+  
+</plugins>
+</pluginManagement>
+  </build>
+  <properties>
+	  <maven.compiler.source>11</maven.compiler.source>
+	  <maven.compiler.target>11</maven.compiler.target>
+	  <restassuredVersion>5.3.0</restassuredVersion>
+	  <jsonPathVersion>5.3.1</jsonPathVersion>
+	  <jsonVersion>20230618</jsonVersion>
+	  <testNGVersion>7.7.1</testNGVersion>
+	  <scribejava-Apis>8.3.3</scribejava-Apis>
+	  <json-schema-Validator>5.1.1</json-schema-Validator>
+	  <jackson-Databind>2.15.0</jackson-Databind>
+	  <javaFaker>1.0.2</javaFaker>
+	  <ExtentReports>5.0.9</ExtentReports>
+	  <Poi>5.2.2</Poi>
+	  <Poi-ooxml>5.2.2</Poi-ooxml>
+	  <log4j-Core>2.20.0</log4j-Core>
+	  <log4j-API>2.20.0</log4j-API>
+	  <Lombok>1.18.22</Lombok>
+	  
+	  
+  </properties>
+  
+  <dependencies>
+	  	 
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>${restassuredVersion}</version>
+   
+</dependency>
+
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-path</artifactId>
+    <version>${jsonPathVersion}</version>
+    
+</dependency>
+
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>${jsonVersion}</version>
+    
+</dependency>
+
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>${testNGVersion}</version>
+   
+</dependency>
+
+<dependency>
+    <groupId>com.github.scribejava</groupId>
+    <artifactId>scribejava-apis</artifactId>
+    <version>${scribejava-Apis}</version>
+   
+</dependency>
+
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>${json-schema-Validator}</version>
+   
+</dependency>
+
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>${jackson-Databind}</version>
+</dependency>
+
+<dependency>
+    <groupId>com.github.javafaker</groupId>
+    <artifactId>javafaker</artifactId>
+    <version>${javaFaker}</version>
+</dependency>
+
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>${ExtentReports}</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>${Poi}</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>${Poi-ooxml}</version>
+</dependency>
+
+
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>${log4j-Core}</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>${log4j-API}</version>
+</dependency>
+
+<dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>${Lombok}</version>
+</dependency>
+  	
+  </dependencies>
+</project>
