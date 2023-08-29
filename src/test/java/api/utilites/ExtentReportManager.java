@@ -1,7 +1,5 @@
 package api.utilites;
 
-
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -15,26 +13,19 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-
-
-
-
-
 public class ExtentReportManager implements ITestListener{
 
 
-	public  ExtentSparkReporter sparkReporter;
-	public ExtentReports extentReports;
-	public ExtentTest test;
+	public  ExtentSparkReporter sparkReporter;  // user interface
+	public ExtentReports extentReports;        // common information
+	public ExtentTest test;                   // entries for test
 
 	String repName;
-	
-
-
+//	On Start method is called when any test starts
 	public void onStart(ITestContext context) {
 
 		String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date()); //time stamp
-		repName = "Test_Report"+timeStamp+".html";
+		repName = "Test_Report-" + timeStamp + ".html";
 
 		sparkReporter = new ExtentSparkReporter(".\\reports\\"+repName); //Specify the location of the report
 
@@ -45,21 +36,21 @@ public class ExtentReportManager implements ITestListener{
 		extentReports = new ExtentReports();
 
 		extentReports.attachReporter(sparkReporter);
-		extentReports.setSystemInfo("Application", "Pet Store User API");
+		extentReports.setSystemInfo("Application", "User API");
 		extentReports.setSystemInfo("Operation System", System.getProperty("os.name"));
 		extentReports.setSystemInfo("User Name", System.getProperty("user.name"));
 		extentReports.setSystemInfo("Environment", "QA");
 		extentReports.setSystemInfo("user","Amol");
 
 	}
-
+// On TestSuccess method is called when any test are success
 	public void onTestSuccess(ITestResult result) {
 		test = extentReports.createTest(result.getName());
 		test.assignCategory(result.getMethod().getGroups());
 		test.createNode(result.getName());
 		test.log(Status.PASS, "Test Passed");
 	}
-
+//	On TestFailure method is called when any test are failed
 	public void onTestFailure(ITestResult result) {
 		test = extentReports.createTest(result.getName());
 		test.assignCategory(result.getMethod().getGroups());
@@ -67,7 +58,7 @@ public class ExtentReportManager implements ITestListener{
 		test.log(Status.FAIL, "Test Failed");
 		test.log(Status.FAIL, result.getThrowable().getMessage());
 	}
-
+//	On TestSkipped method is called when any test are skipped
 	public void onTestSkipped(ITestResult result) {
 		test = extentReports.createTest(result.getName());
 		test.assignCategory(result.getMethod().getGroups());
@@ -75,7 +66,7 @@ public class ExtentReportManager implements ITestListener{
 		test.log(Status.SKIP, "Test Skipped");
 		test.log(Status.SKIP, result.getThrowable().getMessage());
 	}
-
+//	On TestFinish method is called when all tests are executed
 	public void onFinish(ITestContext context) {
 		if(extentReports != null)
 			extentReports.flush();
@@ -83,25 +74,3 @@ public class ExtentReportManager implements ITestListener{
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

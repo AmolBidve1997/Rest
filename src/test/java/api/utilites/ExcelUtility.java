@@ -34,7 +34,6 @@ public class ExcelUtility {
 	public int getRowCount(String sheetName) throws IOException {
 
 		fi = new FileInputStream(path);
-		//		fi = new FileInputStream(path1);
 		workbook = new XSSFWorkbook(fi);
 		sheet = workbook.getSheet(sheetName);
 		int rowcount= sheet.getLastRowNum();
@@ -48,7 +47,6 @@ public class ExcelUtility {
 		fi= new FileInputStream(path);
 		workbook = new XSSFWorkbook(fi);
 		sheet = workbook.getSheet(sheetName);
-
 		row = sheet.getRow(rownum);
 		int cellcount = row.getLastCellNum();
 		workbook.close();

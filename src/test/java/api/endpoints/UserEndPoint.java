@@ -13,9 +13,8 @@ public class UserEndPoint {
 	public static Response createUser(User payload) {
 
 		Response response = given()
-				.contentType(ContentType.JSON)
-			
 				.accept(ContentType.JSON)
+				.contentType(ContentType.JSON)
 				.body(payload)
 				.when()
 				.post(Routes.post_url);
@@ -26,6 +25,7 @@ public class UserEndPoint {
 	public static Response readUser(String userName) {
 
 		Response response = given()
+				.accept(ContentType.JSON)
 				.pathParam("userName", userName)
 
 				.when()
@@ -58,9 +58,9 @@ public class UserEndPoint {
 
 		return response;
 	}
-	
 
 
 
-	
+
+
 }

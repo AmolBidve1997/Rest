@@ -4,7 +4,8 @@
 	<listeners>
 		<listener class-name="api.utilites.ExtentReportManager"></listener>
 	</listeners>
-  <test thread-count="5" name="Test">
+  <test thread-count="2" name="Test">
+	  
     <classes>
      <!--  <class name="api.test.Authentication"/>-->
      <!--  <class name="api.test.LoginTest"/>-->

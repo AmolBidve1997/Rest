@@ -33,7 +33,7 @@ public class API {
 		response.then().log().all();
 
 		Assert.assertEquals(response.getStatusCode(), 201);
-		assertThat(response.path("message").toString(),equalTo("Successfully requeste"));
+		assertThat(response.path("message").toString(),equalTo("Successfully requested"));
 
 	}
 	@Test
